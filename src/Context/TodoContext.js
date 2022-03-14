@@ -9,18 +9,23 @@ export const TodoContextProvider = ({ children }) => {
   };
   const ToggleTodos = (id) => {
     let afterToggle = todos.map((todo) =>
-      todo.id === id ? { ...todo, Status: !todo.Status } : todo
+      todo.id === id
+        ? { ...todo, Status: todo.Status === "true" ? "false" : "true" }
+        : todo
     );
-    console.log(afterToggle);
     setTodos(afterToggle);
   };
   const DeleteTodos = (id) => {
     let afterDelete = todos.filter((todo) => todo.id !== id);
     setTodos(afterDelete);
   };
+  const ClearCompleted = () => {
+    let pendingTasks = todos.filter((todo) => todo.Status !== "true");
+    setTodos(pendingTasks);
+  };
   return (
     <TodoContext.Provider
-      value={{ todos, handleTodos, ToggleTodos, DeleteTodos }}
+      value={{ todos, handleTodos, ToggleTodos, DeleteTodos, ClearCompleted }}
     >
       {children}
     </TodoContext.Provider>

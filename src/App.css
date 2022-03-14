@@ -1,14 +1,36 @@
 .App {
   text-align: center;
 }
-
+body {
+  background: linear-gradient(to top left, #ea99d5 30%, #ffcddd 80%);
+}
+.form {
+  width: 20%;
+  color: #8946a6;
+  margin: auto;
+}
+.form label {
+  font-size: 25px;
+}
 .table {
   border: 1px solid black;
+  color: #8946a6;
+  background-color: #ffcddd;
   margin: auto;
+  margin-top: 40px;
 }
 .tablecells {
   width: max-content;
   border: 1px solid black;
+}
+.table .ant-select {
+  color: #8946a6;
+  width: 100%;
+  font-size: 20px;
+}
+.table .ant-btn {
+  color: #8946a6;
+  margin: 0 5%;
 }
 .tablecells th,
 .tablecells td {
