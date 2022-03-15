@@ -11,14 +11,12 @@ export const TodoContents = () => {
     }, [todos]);
     const onchange = (value) => {
         if (value === "completed") {
-            let afterSort = [...todos];
-            afterSort.sort((a, b) => b.Status.localeCompare(a.Status));
-            setAlltodos(afterSort);
+            let Selected = todos.filter((todo)=>todo.Status==="true");
+            setAlltodos(Selected);
         }
         else if (value === "pending") {
-            let afterSort = [...todos];
-            afterSort.sort((a, b) => a.Status.localeCompare(b.Status));
-            setAlltodos(afterSort);
+            let Selected = todos.filter((todo)=>todo.Status !=="true");
+            setAlltodos(Selected);
         } else {
             setAlltodos(todos);
         }
@@ -43,7 +41,7 @@ export const TodoContents = () => {
             </thead>
             <tbody>
                     {alltodos.map((e) => (<tr key = {e.id} className="tablecells">
-                        <td>{e.task}</td>
+                        <td>{e.Task}</td>
                         <td>{e.Status==="true" ? "Completed" : "Pending"}</td>
                         <td>{e.StartDate}</td>
                         <td>{e.EndDate}</td>
