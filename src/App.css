@@ -22,9 +22,10 @@ body {
 .table {
   border: 1px solid black;
   color: #8946a6;
-  background-color: #ffcddd;
+  background-color: #fff;
   margin: auto;
   margin-top: 40px;
+  margin-bottom: 10px;
 }
 .tablecells {
   width: max-content;
@@ -41,7 +42,16 @@ body {
 }
 .tablecells th,
 .tablecells td {
-  min-width: 200px;
-  width: max-content;
+  width: 200px;
   border: 1px solid black;
+}
+.clear {
+  color: #8946a6;
+}
+@media (max-width: 480px) {
+  .tablecells th,
+  .tablecells td {
+    width: max-content;
+    border: 1px solid black;
+  }
 }

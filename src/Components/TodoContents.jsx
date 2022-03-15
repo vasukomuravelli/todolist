@@ -49,7 +49,7 @@ export const TodoContents = () => {
                 </tr>))}
             </tbody>
         </table>
-        <Button onClick={()=>ClearCompleted()}>Clear All Completed Tasks</Button>
+        <Button onClick={()=>ClearCompleted()} danger>Clear All Completed Tasks</Button>
     </div> : null}
     </>
     )
